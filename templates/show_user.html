@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show user</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='show_user_style.css')}}">
+</head>
+<body>
+    <div class="hello">
+        <h1>Привет ,{{user}}</h1>
+        <a href="/show/{{user}}/back">Back</a>
+    </div>
+</body>
+</html>

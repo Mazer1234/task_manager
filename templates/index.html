@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<link>
+    <meta charset="UTF-8">
+    <title>To-do list</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <div class="to-do">
+        <h1 class="H1">Это to-do list</h1>
+        <form method="post" action="/add" class="button-add">
+            <input type="text" name="task" placeholder="Новая задача" required>
+            <button type="submit">Добавить</button>
+        </form>
+
+        <ul>
+            {% for index, task in tasks %}
+                <li>
+                    {{ task }}
+                    <a href="/delete/{{index}}">❌</a> <a href="/done/{{index}}">+</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="Done">
+        <h1 class="H2">Выполненные задачи</h1>
+        <ul>
+            {% for index, task in done_tasks %}
+                <li>
+                    {{task}}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

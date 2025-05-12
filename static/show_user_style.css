@@ -1,0 +1,13 @@
+body{
+    background-color: #f0f8ff;
+    color: #333;
+}
+
+.hello{
+    text-align: center;
+}
+
+a{
+    font-size: medium;
+    color: #000;
+}
