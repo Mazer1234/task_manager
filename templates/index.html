@@ -8,7 +8,7 @@
 <body>
     <div class="to-do">
         <h1 class="H1">Это to-do list</h1>
-        <form method="post" action="/add" class="button-add">
+        <form method="post" action="/todolist/add" class="button-add">
             <input type="text" name="task" placeholder="Новая задача" required>
             <button type="submit">Добавить</button>
         </form>
@@ -16,8 +16,8 @@
         <ul>
             {% for index, task in tasks %}
                 <li>
-                    {{ task }}
-                    <a href="/delete/{{index}}">❌</a> <a href="/done/{{index}}">+</a>
+                    {{ task.title }}
+                    <a href="/todolist/delete/{{task.id}}">❌</a> <a href="/todolist/done/{{task.id}}">+</a>
                 </li>
             {% endfor %}
         </ul>
@@ -28,10 +28,12 @@
         <ul>
             {% for index, task in done_tasks %}
                 <li>
-                    {{task}}
+                    {{task.title}}
                 </li>
             {% endfor %}
         </ul>
     </div>
+
+    <a href="/">Back</a>
 </body>
 </html>

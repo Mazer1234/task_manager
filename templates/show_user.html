@@ -7,8 +7,17 @@
 </head>
 <body>
     <div class="hello">
-        <h1>Привет ,{{user}}</h1>
-        <a href="/show/{{user}}/back">Back</a>
+        <h1>Привет ,{{username}}</h1>
+        <a href="/todolist">Список задач</a>
+        <a href="/logout">Выйти</a>
+
+        <h2>Твои задачи: </h2>
+
+        {% for task in tasks %}
+            <li>
+                {{task["title"]}} - {{task["status"]}}
+            </li>
+        {% endfor %}
     </div>
 </body>
 </html>
